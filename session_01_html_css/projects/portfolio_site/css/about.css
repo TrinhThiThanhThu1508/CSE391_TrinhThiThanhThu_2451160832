@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.about-content {
+    flex: 1;           
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column; 
+        text-align: center;     
+    }
+}

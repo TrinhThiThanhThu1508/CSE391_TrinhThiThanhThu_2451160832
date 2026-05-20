@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K66 - Quản Lý Sinh Viên </title>
+   
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>HỆ THỐNG QUẢN LÝ SINH VIÊN</h1>
+        
+        <div id="toast-notification" class="toast hidden"></div>
+
+        <div class="statistics-bar">
+            <div class="stat-item">Tổng số sinh viên: <strong id="total-students">0</strong></div>
+            <div class="stat-item">Điểm trung bình lớp: <strong id="class-average">0.0</strong></div>
+        </div>
+
+        <div class="action-bar">
+            <button id="btn-open-modal" class="btn btn-primary">Thêm sinh viên mới</button>
+        </div>
+
+        <div class="table-responsive">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Mã SV</th>
+                        <th>Họ và Tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Lớp</th>
+                        <th>Email</th>
+                        <th>Điểm TB</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="student-table-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="student-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Thêm Mới Sinh Viên</h3>
+                <span id="btn-close-modal" class="close-icon">&times;</span>
+            </div>
+            
+            <form id="student-form" novalidate>
+                <input type="hidden" id="form-mode" value="create">
+                <input type="hidden" id="edit-student-id" value="">
+
+                <div class="form-group">
+                    <label for="student-id">Mã sinh viên:</label>
+                    <input type="text" id="student-id" placeholder="Ví dụ: SV12345">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-name">Họ và tên:</label>
+                    <input type="text" id="student-name" placeholder="Nhập đầy đủ họ tên">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-dob">Ngày sinh:</label>
+                    <input type="date" id="student-dob">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-class">Lớp học:</label>
+                    <input type="text" id="student-class" placeholder="Ví dụ: K66-CNTT">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-email">Email:</label>
+                    <input type="email" id="student-email" placeholder="nguyenvan@gmail.com">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-gpa">Điểm trung bình (0 - 10):</label>
+                    <input type="number" id="student-gpa" step="0.1" min="0" max="10" placeholder="Ví dụ: 8.5">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="btn-cancel-form" class="btn btn-secondary">Hủy bỏ</button>
+                    <button type="submit" id="btn-submit-form" class="btn btn-success">Lưu lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
