@@ -1,0 +1,71 @@
+/* Tổng quan giao diện lab */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    padding: 30px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #1e293b;
+}
+
+/* --- STYLE PHẦN 1 --- */
+.lab-section-1 {
+    display: flex; /* Xếp 2 hộp nằm cạnh nhau */
+    gap: 20px;
+}
+
+.box-test {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #0f172a;
+    background-color: #ffb6c1; /* Giữ chút tone pastel dễ thương */
+    color: #4a373d;
+}
+
+/* Hộp 1: content-box */
+.content-box-test {
+    box-sizing: content-box; 
+}
+
+/* Hộp 2: border-box */
+.border-box-test {
+    box-sizing: border-box;
+}
+
+/* --- STYLE PHẦN 2 --- */
+.container-1000 {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px dashed #64748b;
+    display: flex; /* Xếp 3 cột nằm ngang hàng */
+    
+    /* BƯỚC QUYẾT ĐỊNH: Bật border-box cho các cột để không bị tràn */
+    box-sizing: border-box; 
+}
+
+/* Áp dụng border-box cho TẤT CẢ các cột bên trong layout */
+.container-1000 * {
+    box-sizing: border-box; 
+}
+
+.col-left {
+    width: 250px;
+    background-color: #fff0f5; /* Hồng phấn nhạt */
+    padding: 15px;
+}
+
+.col-center {
+    width: 500px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.col-right {
+    width: 250px;
+    background-color: #fff0f5; /* Hồng phấn nhạt */
+    padding: 15px;
+}
