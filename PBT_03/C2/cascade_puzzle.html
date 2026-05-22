@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Chứng Câu C2 - Cascade Puzzle</title>
+    <style>
+        /* --- ĐOẠN CSS CỦA ĐỀ BÀI --- */
+        body { font-size: 16px; color: #333; }
+        .container { font-size: 14px; }
+        .card { color: blue; }
+        .card .title { font-size: 20px; }
+        .card p { color: inherit; }
+        #featured .title { color: red; }
+        .highlight { color: green !important; }
+
+        /* --- Viết thêm CSS bổ trợ giao diện kiểm chứng trực quan --- */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f5f6fa;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        #featured {
+            border-left: 5px solid #ff7675; /* Đánh dấu khối đặc biệt */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card" id="featured">
+            <h2 class="title highlight">Sản phẩm A</h2>
+            <p>Mô tả sản phẩm</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="title">Sản phẩm B</h2>
+            <p class="highlight">Mô tả sản phẩm B</p>
+        </div>
+    </div>
+
+</body>
+</html> 
