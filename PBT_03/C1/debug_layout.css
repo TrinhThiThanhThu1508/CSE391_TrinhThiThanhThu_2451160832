@@ -1,0 +1,56 @@
+/* --- Cấu hình layout chung ban đầu --- */
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #f1f2f6;
+    border: 2px dashed #6f42c1;
+    padding: 10px;
+}
+
+.sidebar {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #ff7675;
+    float: left;
+}
+
+.content {
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #74b9ff;
+    float: left;
+}
+
+/* Kỹ thuật xóa dòng trống sau khi sử dụng float */
+.clearfix {
+    clear: both;
+}
+
+h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+    color: #2d3436;
+}
+
+/* CÁCH 1: SỬ DỤNG BORDER-BOX*/
+.fix-box-sizing * {
+    box-sizing: border-box; /* Ép tất cả phần tử bên trong tính theo viền */
+}
+.fix-box-sizing .sidebar {
+    width: 300px; /* Giữ nguyên kích thước mong muốn */
+}
+.fix-box-sizing .content {
+    width: 660px; /* Giữ nguyên kích thước mong muốn */
+}
+
+/* CÁCH 2: KHÔNG DÙNG BORDER-BOX (Tính toán trừ thủ công width gốc)*/
+.fix-manual-math .sidebar {
+    /* Khai báo lại width = Kích thước đích - Padding - Border */
+    width: 258px; 
+}
+.fix-manual-math .content {
+    /* Khai báo lại width = Kích thước đích - Padding - Border */
+    width: 598px; 
+}  
