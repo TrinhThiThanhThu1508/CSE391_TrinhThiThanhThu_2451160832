@@ -1,0 +1,31 @@
+/* Sắp xếp TỪ THẤP ĐẾN CAO theo điểm Specificity (ID, Class, Element) */
+
+/* 1. Universal Selector - Điểm: 0,0,0 */
+* { color: gray; }
+
+/* 2. Element Selector - Điểm: 0,0,1 */
+p { color: pink; }
+
+/* 3. Class Selector - Điểm: 0,1,0 */
+.text { color: blue; }
+
+/* 4. Element + Class Selector - Điểm: 0,1,1 */
+p.text { color: green; }
+
+/* 5. 2 Classes Selector - Điểm: 0,2,0 */
+.text.highlight { color: orange; }
+
+/* 6. Element + 2 Classes Selector - Điểm: 0,2,1 */
+p.text.highlight { color: purple; }
+
+/* 7. ID Selector - Điểm: 1,0,0 */
+#demo { color: red; }
+
+/* 8. Element + ID Selector - Điểm: 1,0,1 */
+p#demo { color: brown; }
+
+/* 9. ID + 2 Classes Selector - Điểm: 1,2,0 */
+#demo.text.highlight { color: teal; }
+
+/* 10. Element + ID + 2 Classes Selector - Điểm: 1,2,1 */
+p#demo.text.highlight { color: gold; }
