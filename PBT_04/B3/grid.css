@@ -28,6 +28,14 @@ body {
     padding: 15px;
     font-size: 24px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .nav {
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .hero {
@@ -38,16 +46,23 @@ body {
     
     /* Grid con bên trong Hero để chứa card nổi bật */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
-    gap: 10px;
+    grid-template-columns: 1fr 1fr; /* Chia đôi không gian Hero */
+    gap: 15px;
+    align-items: center;
 }
 
-
 .featured-card {
-    grid-column: span 2; 
     background-color: yellow;
     padding: 15px;
     border: 2px dashed red; 
+}
+
+.hot-tag {
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .footer {
@@ -69,8 +84,17 @@ body {
     margin-bottom: 10px;
 }
 
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group label {
+    display: block;
+    margin: 5px 0;
+}
+
 .main-content {
-    
+    padding: 5px;
 }
 
 .ads {
@@ -83,13 +107,26 @@ body {
 /* GRID CON TRONG MAIN CONTENT (CHỨA SẢN PHẨM) */
 .product-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; /* Chia thành 3 cột đều nhau cho sản phẩm */
+    gap: 15px; /* Thêm khoảng cách giữa các card sản phẩm */
 }
 
-
-.card {
+.product-card {
     background-color: white;
     border: 1px solid #000;
     padding: 20px;
     text-align: center;
+}
+
+.img-box {
+    background-color: #ddd;
+    padding: 30px 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
 }
