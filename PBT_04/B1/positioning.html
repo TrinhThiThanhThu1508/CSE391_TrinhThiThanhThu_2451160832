@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Playground</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">MyLogo</div>
+        <nav class="navigation">
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sticky-sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li><a href="#">Điện thoại</a></li>
+                <li><a href="#">Laptop</a></li>
+                <li><a href="#">Phụ kiện</a></li>
+                <li><a href="#">Đồng hồ</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h2>Sản phẩm nổi bật</h2>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="badge-hot">HOT</span>
+                    <div class="product-image">📦</div>
+                    <div class="product-info">
+                        <h3>iPhone 15 Pro Max</h3>
+                        <p class="price">29.990.000đ</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">📦</div>
+                    <div class="product-info">
+                        <h3>MacBook M3</h3>
+                        <p class="price">32.490.000đ</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">📦</div>
+                    <div class="product-info">
+                        <h3>iPad Air 5</h3>
+                        <p class="price">14.290.000đ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dummy-text">
+                <h3>Cuộn xuống để kiểm tra thuộc tính Fixed và Sticky</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Đang test chức năng cuộn trang...</p>
+                <p>Nội dung kéo dài nhằm mục đích tạo thanh cuộn (scrollbar). Khi bạn cuộn chuột xuống, hãy quan sát: Header vẫn đứng yên ở trên cùng, Sidebar sẽ chạy theo cho đến khi cách mép trên 80px thì dừng lại (dính), và nút Scroll To Top luôn nằm ở góc phải dưới màn hình.</p>
+                <div style="height: 1000px;"></div> <p>Kết thúc trang web.</p>
+            </div>
+        </main>
+    </div>
+
+    <button class="scroll-top">↑</button>
+
+</body>
+</html>
