@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product Page</title>
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">ShopName</div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <h3>Bộ lọc sản phẩm</h3>
+            <div class="filter-group">
+                <label for="category">Danh mục:</label>
+                <select id="category">
+                    <option>Tất cả sản phẩm</option>
+                    <option>Điện thoại</option>
+                    <option>Laptop</option>
+                    <option>Phụ kiện</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="product-grid">
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=1" alt="Sản phẩm 1">
+                <div class="card-content">
+                    <h4>Sản phẩm Smartphone Alpha</h4>
+                    <p class="price">15.000.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=2" alt="Sản phẩm 2">
+                <div class="card-content">
+                    <h4>Laptop Gaming Ultra X</h4>
+                    <p class="price">28.500.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=3" alt="Sản phẩm 3">
+                <div class="card-content">
+                    <h4>Tai nghe Noise Cancelling</h4>
+                    <p class="price">3.200.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=4" alt="Sản phẩm 4">
+                <div class="card-content">
+                    <h4>Đồng hồ thông minh FitPro</h4>
+                    <p class="price">4.500.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=5" alt="Sản phẩm 5">
+                <div class="card-content">
+                    <h4>Bàn phím cơ RGB Wireless</h4>
+                    <p class="price">1.850.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=6" alt="Sản phẩm 6">
+                <div class="card-content">
+                    <h4>Chuột Gaming siêu nhẹ</h4>
+                    <p class="price">1.200.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=7" alt="Sản phẩm 7">
+                <div class="card-content">
+                    <h4>Sạc dự phòng FastCharge 20W</h4>
+                    <p class="price">650.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?random=8" alt="Sản phẩm 8">
+                <div class="card-content">
+                    <h4>Loa Bluetooth BassBoost</h4>
+                    <p class="price">2.400.000đ</p>
+                    <button>Mua ngay</button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="ads-bar">
+            <div class="ads-box">Quảng cáo hot trong ngày!</div>
+            <div class="ads-box">Khuyến mãi Giảm 50%</div>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 ShopName. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
