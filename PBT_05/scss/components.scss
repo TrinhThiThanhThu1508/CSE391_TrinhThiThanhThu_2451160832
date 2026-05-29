@@ -1,0 +1,65 @@
+// Import variables và mixins vào component để sử dụng
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: $font-primary;
+    background-color: $light-color;
+    padding: $spacing-lg;
+}
+
+// Block lồng nhau (Nesting) đạt chuẩn cấu trúc đề bài
+.card {
+    background-color: #ffffff;  
+    border-radius: 12px;
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    @include card-shadow; // Sử dụng Mixin Shadow
+
+    // Nested block 1: card-image
+    .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    // Nested block 2: card-title
+    .card-title {
+        font-size: 1.25rem;
+        color: $dark-color;
+        margin: $spacing-sm 0;
+    }
+
+    // Parent Selector 1: Hiệu ứng hover
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // Parent Selector 2: Trạng thái nổi bật (Featured)
+    &.featured {
+        border: 2px solid $primary-color;
+        background-color: lighten($primary-color, 45%);
+    }
+
+    // Áp dụng responsive mixin ngay trong block
+    @include respond-to("tablet") {
+        padding: $spacing-sm;
+    }
+}
+
+// Nút bấm tận dụng flex-center và variables
+.btn-action {
+    @include flex-center; // Sử dụng Mixin Flex
+    background-color: $secondary-color;
+    color: white;
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darkne($secondary-color, 10%);
+    }
+}

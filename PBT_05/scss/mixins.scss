@@ -1,0 +1,21 @@
+// 1. Mixin Responsive sử dụng Media Query
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "tablet" {
+        @media (max-width: $breakpoint-tablet) { @content; }
+    } @else if $breakpoint == "desktop" {
+        @media (max-width: $breakpoint-desktop) { @content; }
+    }
+}
+
+// 2. Mixin Flexbox Center nhanh
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 3. Mixin đổ bóng cho Card
+@mixin card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
