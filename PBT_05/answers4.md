@@ -147,3 +147,175 @@
 - Để chuyển SCSS → CSS cần sử dụng một trình biên dịch (Compiler) như Node Sass, Dart Sass, hoặc các extension cài trên VS Code (như Live Sass Compiler) để "dịch" file .scss thành file .css bình thường rồi mới nhúng file .css đó vào HTML
 
 ---
+
+# CÂU B3 - BÁO CÁO BIÊN DỊCH SCSS (SCSS REFACTOR)
+
+## 1. Lệnh biên dịch (Compile Command)
+
+Sử dụng công cụ **Sass CLI** chính thức để biên dịch từ file `style.scss` tổng thành file CSS chạy thực tế:
+
+```bash
+# Lệnh biên dịch một lần (Single Compile)
+sass scss/style.scss css/style.css
+
+# Lệnh biên dịch tự động cập nhật khi sửa file (Watch Mode - Khuyên dùng)
+sass --watch scss/style.scss css/style.css 
+
+```
+
+## PHẦN C — PHÂN TÍCH 
+
+### Câu C1 — Phân tích trang web thực
+
+Chọn 1 trang web nổi tiếng (Shopee, Tiki, VNExpress, YouTube).
+
+1. Mở trang trên **3 kích thước màn hình** khác nhau (dùng DevTools Toggle Device):
+### Mobile (375px)
+- Navigation: Không có sidebar (thanh điều hướng bên trái). Navigation chuyển hoàn toàn thành Bottom Navigation Bar (thanh điều hướng dưới đáy màn hình) với các icon: Trang chủ, Shorts, Dấu +, Đăng ký, Thư viện. Hamburger menu biến mất.
+- Lưới content (Grid): Hiển thị 1 cột duy nhất. Ảnh thumbnail của video tràn viền (100% width) để tối ưu không gian chạm.
+- Elements bị ẩn: Thanh tìm kiếm dài ở giữa top bar bị ẩn, thay bằng một icon kính lúp (khi bấm vào mới mở ra trang tìm kiếm riêng). Sidebar bên trái bị ẩn hoàn toàn.
+- Font size: Tiêu đề video to và rõ ràng, text mô tả kênh thường bị cắt ngắn (truncate) hoặc thu nhỏ lại đôi chút để không chiếm quá nhiều không gian dọc.
+### Tablet (768px)  
+- Navigation: Bottom Navigation Bar biến mất. Xuất hiện lại Mini Sidebar ở bên trái (chỉ có icon, không có text đi kèm) cho các mục: Trang chủ, Shorts, Đăng ký, Thư viện. Thanh tìm kiếm ở trên cùng đã xuất hiện dạng input box đầy đủ.
+- Lưới content (Grid): Lưới chuyển sang dạng 2 hoặc 3 cột tùy thuộc vào việc bạn đóng hay mở menu.
+- Elements bị ẩn: Text mô tả trong sidebar bên trái vẫn bị ẩn để tiết kiệm diện tích, chỉ giữ lại icon.
+- Font size: Kích thước chữ tiêu chuẩn, tiêu đề video được hiển thị dài hơn so với mobile trước khi bị cắt bằng dấu
+### Desktop (1440px)
+- Navigation :Full Sidebar xuất hiện bên trái với đầy đủ Icon + Text (Trang chủ, Shorts, Đăng ký, Kênh của bạn, Lịch sử...). Xuất hiện nút Hamburger menu ở góc trái trên cùng để người dùng có thể chủ động thu gọn sidebar này lại thành Mini Sidebar.
+- Lưới content (Grid): Lưới mở rộng lên 4, 5 hoặc thậm chí 6 cột video. Khoảng cách (gap) giữa các video rộng và thoáng hơn.
+- Elements bị ẩn: Bottom navigation của mobile hoàn toàn không tồn tại
+- Font size: Font size giữ nguyên chuẩn desktop, nhưng layout rộng rãi cho phép hiển thị thêm nhiều metadata của video (số lượt xem, thời gian đăng, huy hiệu xác minh) mà không sợ bị rối mắt
+
+### Câu C2 — Thiết kế Responsive Strategy
+1. Mobile Wireframe (Dưới 768px)
++-------------------------+
+| [Logo]             [📞] | 
++-------------------------+
+|                         |
+|       HERO IMAGE        |
+|                         |
++-------------------------+
+|      FORM ĐẶT BÀN       | 
+| [Ngày]  [Giờ]  [Người]  |
+| [Ghi chú ............]  |
+|      [ ĐẶT NGAY ]       |
++-------------------------+
+|       THỰC ĐƠN          |
+| [Ảnh món 1] [Ảnh món 2] | 
+| [Ảnh món 3] [Ảnh món 4] |
+| [Ảnh món 5] [Ảnh món 6] |
++-------------------------+
+|       BẢN ĐỒ MAPS       |
++-------------------------+
+|         FOOTER          |
++-------------------------+
+2. Tablet Wireframe (768px - 1023px)
++-----------------------------------+
+| [Logo]             [Hotline: 1900]| 
++-----------------------------------+
+|                                   |
+|           HERO IMAGE              |
+|                                   |
++-----------------------------------+
+|            THỰC ĐƠN               |
+|  [Ảnh 1]    [Ảnh 2]    [Ảnh 3]    | 
+|  [Ảnh 4]    [Ảnh 5]    [Ảnh 6]    |
++-----------------------------------+
+|  FORM ĐẶT BÀN   |   BẢN ĐỒ MAPS   | 
+| [Ngày] [Giờ]    |                 |    
+| [Số người]      |                 |
+| [ĐẶT NGAY]      |                 |
++-----------------------------------+
+|              FOOTER               |
++-----------------------------------+
+3. Desktop Wireframe (Từ 1024px trở lên)
++---------------------------------------------------+
+| [Logo]                        [Hotline: 1900 1234]|
++---------------------------------------------------+
+|                                                   |
+|                   HERO IMAGE                      |
+|                                                   |
++---------------------------------+-----------------+
+|           THỰC ĐƠN              |   FORM ĐẶT BÀN  | 
+| [Ảnh 1]   [Ảnh 2]   [Ảnh 3]     |                 |   
+| [Ảnh 4]   [Ảnh 5]   [Ảnh 6]     |  [Ngày] [Giờ]   |    
++---------------------------------+  [Số người]     |
+|                                 |  [Ghi chú]      |
+|          BẢN ĐỒ MAPS            |                 |
+|                                 |  [ ĐẶT NGAY ]   |
++---------------------------------+-----------------+
+|                      FOOTER                       |
++---------------------------------------------------+
+- CSS skeleton
+```css
+.header       { grid-area: header; }
+.hero         { grid-area: hero; }
+.booking-form { grid-area: booking-form; }
+.food-gallery { grid-area: food-gallery; }
+.map          { grid-area: map; }
+.footer       { grid-area: footer; }
+
+/*1. MOBILE-FIRST (Mặc định cho màn hình < 768px)*/
+.layout-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  
+    "header"
+    "hero"
+    "booking-form" 
+    "food-gallery"
+    "map"
+    "footer";
+}
+
+.food-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.header .phone-text {
+  display: none; 
+}
+
+/* 2. TABLET (Từ 768px đến 1023px)*/
+@media (min-width: 768px) {
+  
+  
+  .header .phone-text { 
+    display: inline; 
+  } 
+  .food-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .layout-container {
+    grid-template-columns: 1fr 1fr; 
+    grid-template-areas:
+      "header       header"
+      "hero         hero"
+      "food-gallery food-gallery"
+      "booking-form map"         
+      "footer       footer";
+  }
+}
+
+/* 3. DESKTOP (Từ 1024px trở lên)*/
+@media (min-width: 1024px) {
+
+  .layout-container {
+    grid-template-columns: 2fr 1fr; 
+    grid-template-areas:
+      "header       header"
+      "hero         hero"
+      "food-gallery booking-form" 
+      "map          booking-form"
+      "footer       footer";
+  }
+
+  .booking-form {
+    position: sticky;
+    top: 24px;
+    align-self: start; 
+  }
+}
