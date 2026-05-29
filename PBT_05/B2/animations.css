@@ -1,0 +1,144 @@
+/* Reset CSS & Base Styles cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ==========================================
+   4. LOADING SPINNER EFFECT (@keyframes)
+   ========================================== */
+.spinner-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #3498db; /* Màu nổi bật cho vòng xoay */
+    border-radius: 50%; /* Tạo hình tròn */
+    margin: 0 auto 10px;
+    animation: spin 1s linear infinite; /* Xoay vô hạn */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   5. FADE-IN ANIMATION (CSS Only)
+   ========================================== */
+.fade-in-scroll {
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   1. CARD HOVER EFFECT
+   ========================================== */
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Transition mượt mà cho tất cả thuộc tính thay đổi khi hover */
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Bay lên 8px */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ đổ bóng sâu hơn */
+}
+
+/* ==========================================
+   3. IMAGE ZOOM EFFECT
+   ========================================== */
+.image-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden; /* Cực kỳ quan trọng: Giữ ảnh không tràn ra ngoài khi scale */
+    background-color: #f9f9f9;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Tạo độ mượt khi zoom */
+}
+
+/* Khi hover vào card, kích hoạt zoom ảnh bên trong */
+.product-card:hover .image-container img {
+    transform: scale(1.1);
+}
+
+/* Card Info Padding */
+.card-info {
+    padding: 24px;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   2. BUTTON HOVER EFFECT ("Mua ngay")
+   ========================================== */
+.btn-buy {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71; /* Màu nền gốc */
+    color: #ffffff;            /* Màu chữ gốc */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    /* Transition mượt mà cho đổi màu và scale */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-buy:hover {
+    background-color: #27ae60; /* Đổi màu nền mượt mà */
+    color: #ffff00;            /* Đổi màu chữ mượt mà (VD: sang màu vàng nhẹ hoặc trắng sáng) */
+    transform: scale(1.05);    /* Scale nhẹ lên 1.05 lần */
+}
