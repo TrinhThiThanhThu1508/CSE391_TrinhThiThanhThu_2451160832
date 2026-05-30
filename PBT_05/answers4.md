@@ -171,20 +171,23 @@ Chọn 1 trang web nổi tiếng (Shopee, Tiki, VNExpress, YouTube).
 
 1. Mở trang trên **3 kích thước màn hình** khác nhau (dùng DevTools Toggle Device):
 ### Mobile (375px)
-- Navigation: Không có sidebar (thanh điều hướng bên trái). Navigation chuyển hoàn toàn thành Bottom Navigation Bar (thanh điều hướng dưới đáy màn hình) với các icon: Trang chủ, Shorts, Dấu +, Đăng ký, Thư viện. Hamburger menu biến mất.
-- Lưới content (Grid): Hiển thị 1 cột duy nhất. Ảnh thumbnail của video tràn viền (100% width) để tối ưu không gian chạm.
-- Elements bị ẩn: Thanh tìm kiếm dài ở giữa top bar bị ẩn, thay bằng một icon kính lúp (khi bấm vào mới mở ra trang tìm kiếm riêng). Sidebar bên trái bị ẩn hoàn toàn.
-- Font size: Tiêu đề video to và rõ ràng, text mô tả kênh thường bị cắt ngắn (truncate) hoặc thu nhỏ lại đôi chút để không chiếm quá nhiều không gian dọc.
+- Navigation: Sidebar bên trái bị ẩn hoàn toàn. Thanh menu điều hướng chính được chuyển xuống thành một thanh điều hướng cố định ở đáy màn hình (Bottom Navigation Bar) gồm 5 Tab: Trang chủ, Shorts, Dấu cộng (+), Đăng ký, Bạn. Thanh tìm kiếm trên Header biến thành một icon Kính lúp, khi chạm vào mới bung ra ô nhập.
+- Lưới Content (Video Grid): Chuyển hẳn về 1 cột duy nhất. Mỗi video chiếm trọn chiều ngang màn hình di động, giúp người dùng dễ dàng lướt bằng ngón cái (Thumb-zone).
+- Elements bị ẩn: Toàn bộ Sidebar trái, nút "Giới thiệu", các thông tin phụ bên lề video và phần bình luận bị thu gọn sâu vào một block nhấn để mở rộng.
+- Font size: Tiêu đề video giảm xuống còn khoảng 12px - 14px để tối ưu không gian hiển thị text trên màn hình hẹp.
+
 ### Tablet (768px)  
-- Navigation: Bottom Navigation Bar biến mất. Xuất hiện lại Mini Sidebar ở bên trái (chỉ có icon, không có text đi kèm) cho các mục: Trang chủ, Shorts, Đăng ký, Thư viện. Thanh tìm kiếm ở trên cùng đã xuất hiện dạng input box đầy đủ.
-- Lưới content (Grid): Lưới chuyển sang dạng 2 hoặc 3 cột tùy thuộc vào việc bạn đóng hay mở menu.
+- Navigation: Thanh tìm kiếm thu nhỏ lại (đôi khi chỉ còn icon kính lúp trên một số biến thể layout cũ, hoặc giữ nguyên nhưng ép dẹp lại). Sidebar bên trái tự động thu gọn lại (Collapsible Sidebar) — chỉ còn hiển thị icon mà không còn chữ đi kèm để nhường không gian cho nội dung.
+- Lưới Content (Video Grid): Lưới video tự động co giãn và giảm xuống còn 2 cột hoặc 3 cột để đảm bảo hình ảnh video không bị quá nhỏ.
 - Elements bị ẩn: Text mô tả trong sidebar bên trái vẫn bị ẩn để tiết kiệm diện tích, chỉ giữ lại icon.
-- Font size: Kích thước chữ tiêu chuẩn, tiêu đề video được hiển thị dài hơn so với mobile trước khi bị cắt bằng dấu
+- Font size: Giữ nguyên font-size gốc hoặc một số thành phần sub-text (số lượt xem, thời gian) giảm nhẹ khoảng 1px để tránh bị rớt dòng.
+
 ### Desktop (1440px)
 - Navigation :Full Sidebar xuất hiện bên trái với đầy đủ Icon + Text (Trang chủ, Shorts, Đăng ký, Kênh của bạn, Lịch sử...). Xuất hiện nút Hamburger menu ở góc trái trên cùng để người dùng có thể chủ động thu gọn sidebar này lại thành Mini Sidebar.
-- Lưới content (Grid): Lưới mở rộng lên 4, 5 hoặc thậm chí 6 cột video. Khoảng cách (gap) giữa các video rộng và thoáng hơn.
+- Lưới Content (Video Grid): Lưới video hiển thị tối đa 4 cột hoặc 5 cột tùy thuộc vào việc đóng/mở sidebar. Kích thước các thumbnail video lớn, rõ nét.
 - Elements bị ẩn: Bottom navigation của mobile hoàn toàn không tồn tại
-- Font size: Font size giữ nguyên chuẩn desktop, nhưng layout rộng rãi cho phép hiển thị thêm nhiều metadata của video (số lượt xem, thời gian đăng, huy hiệu xác minh) mà không sợ bị rối mắt
+- Font size: Tiêu đề video thường có font-size dao động khoảng 1.4rem đến 1.6rem (14px - 16px), tiêu đề lớn trên banner có thể lên tới 20px - 24px.
+
 
 ### Câu C2 — Thiết kế Responsive Strategy
 1. Mobile Wireframe (Dưới 768px)
