@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Thư - Study Blog</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/custom-theme.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/comments.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-success" href="#">Thanh Thư</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-spacing">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 blog-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800"
+                            class="card-img-top"
+                            alt="Study Session"
+                        >
+                        <div class="card-body p-4">
+                            <span class="badge bg-success mb-3">TLU Study</span>
+                            <h3 class="card-title fw-semibold">Bí Kíp Vượt Qua Mùa Cày Bài Tập Lớn Cuối Kỳ</h3>
+                            <p class="card-text text-secondary">
+                                Lại một mùa thi và làm bài tập lớn (BTL) nữa lại đến 
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <small class="text-secondary">May 15, 2026</small>
+                                <a href="#" class="btn btn-outline-success">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 blog-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+                            class="card-img-top"
+                            alt="Coding Laptop"
+                        >
+                        <div class="card-body p-4">
+                            <span class="badge bg-dark mb-3">Thư Học Code</span>
+                            <h3 class="card-title fw-semibold">Hành Trình Tự Học Web Front-End Từ Con Số 0</h3>
+                            <p class="card-text text-secondary">
+                                Ai bảo con gái học công nghệ thông tin là khô khan nào? Hôm nay Thư sẽ chia sẻ lộ trình tự học HTML, CSS và Bootstrap cơ bản cực kỳ trực quan, giúp các bạn có thể tự tay design một trang web cá nhân siêu dễ thương và mang đậm dấu ấn cá nhân.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <small class="text-secondary">May 10, 2026</small>
+                                <a href="#" class="btn btn-outline-success">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="sticky-top sidebar-sticky">
+                        
+                        <div class="bg-white p-4 rounded-4 shadow-sm sidebar-box mb-4">
+                            <h4 class="fw-semibold mb-4">Categories</h4>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">Góc Học Tập</a>
+                                <a href="#" class="list-group-item list-group-item-action">TLU / Sinh Viên</a>
+                                <a href="#" class="list-group-item list-group-item-action">Dự Án Lập Trình</a>
+                                <a href="#" class="list-group-item list-group-item-action">Nhật Ký Của Thư</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-4 shadow-sm sidebar-box">
+                            <h4 class="fw-semibold mb-4">Tags</h4>
+                            <div class="d-flex flex-wrap gap-2 tags-cloud">
+                                <span class="badge bg-success">TLU</span>
+                                <span class="badge bg-dark">StudyGram</span>
+                                <span class="badge bg-secondary">WebDesign</span>
+                                <span class="badge bg-success">Bootstrap5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-spacing">
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-body p-4">
+                <h3 class="mb-4">Leave a Comment</h3>
+                <div class="d-flex gap-3">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ThanhThu" class="rounded-circle comment-avatar" alt="Avatar">
+                    <form class="w-100">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your name">
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Write your comment..."></textarea>
+                        </div>
+                        <button class="btn btn-success">Post Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4">
+                <h3 class="mb-4">Comments</h3>
+                
+                <div class="d-flex gap-3 mb-4">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" class="rounded-circle comment-avatar" alt="Minh Hạnh">
+                    <div>
+                        <h6 class="mb-1">Minh Hạnh / TLU</h6>
+                        <p class="text-secondary mb-2">Bài viết chia sẻ đúng lúc quá Thư ơi! Nhóm mình cũng đang bị rối phần phân chia task làm BTL tuần này, cho mình xin file template quản lý công việc được không?</p>
+                        <a href="#" class="text-success text-decoration-none small fw-semibold">Reply</a>
+
+                        <div class="d-flex gap-3 mt-4 ms-5">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" class="rounded-circle comment-avatar" alt="Thanh Thư">
+                            <div>
+                                <h6 class="mb-1">Thanh Thư</h6>
+                                <p class="text-secondary mb-0">Được chứ Hạnh ơi, lát nữa Thư check inbox rồi gửi link file Notion quản lý tiến độ cho nhóm nàng tham khảo nhé! Cố lên nha! 🥰</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" class="rounded-circle comment-avatar" alt="Khánh Linh">
+                    <div>
+                        <h6 class="mb-1">Khánh Linh</h6>
+                        <p class="text-secondary mb-2">Trang blog nhìn xinh xắn và trực quan ghê, Thư phối màu xanh lá (success) nhìn rất dịu mắt luôn ấy!</p>
+                        <a href="#" class="text-success text-decoration-none small fw-semibold">Reply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/main.js"></script>
+
+</body>
+</html>
