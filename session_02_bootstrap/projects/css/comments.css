@@ -1,0 +1,101 @@
+/* ========================================================
+   COMMENTS SECTION STYLES (Thanh Thư - Study Blog)
+   ======================================================== */
+
+/* 1. Định dạng ảnh đại diện bình luận (Comment Avatar) */
+.comment-avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover; /* Giúp ảnh không bị bóp méo dù tỷ lệ ảnh gốc thế nào */
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+/* Hiệu ứng nhúc nhích nhẹ khi di chuột vào avatar */
+.comment-avatar:hover {
+    transform: scale(1.08);
+}
+
+/* Thu nhỏ nhẹ avatar ở các tầng phản hồi (Reply) con */
+.ms-5 .comment-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+/* 2. Custom Khung Viết Bình Luận (Form Controls) */
+.card form .form-control {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background-color: #fdfdfd;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+/* Đổi màu viền xanh lá cây và đổ bóng nhẹ khi bấm chọn ô nhập dữ liệu (Focus) */
+.card form .form-control:focus {
+    color: #212529;
+    background-color: #ffffff;
+    border-color: #198754; /* Màu success */
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15); /* Đổ bóng xanh nhạt */
+}
+
+/* Custom lại nút gửi bình luận */
+.card form .btn-success {
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.15);
+    transition: all 0.25s ease;
+}
+
+.card form .btn-success:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(25, 135, 84, 0.25);
+}
+
+/* 3. Custom Hội Thoại Bình Luận (Thread Styling) */
+.card-body h6 {
+    color: #212529;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Chỉnh nút Reply (Phản hồi) */
+.card-body a.text-success {
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+.card-body a.text-success:hover {
+    color: #146c43 !important; /* Xanh đậm hơn khi hover */
+    text-decoration: underline !important;
+}
+
+/* Tạo đường kẻ phân cách giữa các khối comment lớn */
+.card-body > .d-flex:not(:last-child) {
+    border-bottom: 1px dashed #e9ecef;
+    padding-bottom: 24px;
+}
+
+/* 4. Tối ưu hiển thị trên giao diện Mobile */
+@media (max-width: 576px) {
+    /* Thu nhỏ khoảng cách thụt lề của reply con trên mobile để tránh tràn màn hình */
+    .ms-5 {
+        margin-left: 1.5rem !important; 
+    }
+    
+    .comment-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .ms-5 .comment-avatar {
+        width: 34px;
+        height: 34px;
+    }
+}

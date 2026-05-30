@@ -1,0 +1,99 @@
+/* ========================================================
+   GLOBAL THEME STYLES (Thanh Thư - Personal Brand)
+   ======================================================== */
+
+/* Nhúng phông chữ Inter hiện đại từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #198754;       /* Màu xanh lá success chủ đạo */
+    --primary-hover: #146c43;       /* Màu xanh đậm hơn khi di chuột */
+    --body-bg: #f8f9fa;             /* Màu nền xám nhạt */
+    --text-main: #212529;           /* Màu chữ chính */
+    --text-muted: #6c757d;          /* Màu chữ phụ nhạt hơn */
+    --font-base: 'Inter', sans-serif;
+}
+
+/* 1. Cấu hình chung cho toàn trang */
+html {
+    scroll-behavior: smooth; /* Hiệu ứng cuộn trang mượt mà khi bấm link neo # */
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--body-bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tùy biến màu sắc khi bôi đen văn bản */
+::selection {
+    background-color: rgba(25, 135, 84, 0.2);
+    color: var(--primary-color);
+}
+
+/* 2. Custom Thanh Điều Hướng (Sticky Navbar) */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px); /* Tạo hiệu ứng mờ kính sang trọng khi cuộn */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.02);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+/* Logo thương hiệu "Thanh Thư" */
+.navbar-brand {
+    letter-spacing: -0.5px;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+/* Các liên kết menu */
+.navbar-nav .nav-link {
+    color: #495057;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 6px 12px !important;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+/* Khi di chuột qua các link menu */
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+    background-color: rgba(25, 135, 84, 0.05);
+}
+
+/* Trạng thái link đang hiển thị hiện tại (Active) */
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.2);
+}
+
+/* 3. Đè lại (Override) một số Class của Bootstrap để đồng bộ */
+.badge.bg-success {
+    background-color: rgba(25, 135, 84, 0.1) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid rgba(25, 135, 84, 0.2);
+}
+
+.badge.bg-dark {
+    background-color: #e9ecef !important;
+    color: #495057 !important;
+}
+
+.badge.bg-secondary {
+    background-color: #e2e3e5 !important;
+    color: #41464b !important;
+}
+
+/* 4. Định dạng chung cho chân trang (Footer) */
+footer {
+    background-color: #ffffff;
+    font-size: 0.9rem;
+}

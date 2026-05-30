@@ -1,0 +1,100 @@
+/* ========================================================
+   BLOG PAGE CUSTOM STYLES (Thanh Thư - Study Blog)
+   ======================================================== */
+
+/* 1. Khoảng cách cho các vùng nội dung */
+.section-spacing {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Nền xám nhạt nhẹ để nổi bật các khung card trắng */
+}
+
+/* 2. Custom Thẻ Bài Viết (Blog Card) */
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+/* Hiệu ứng nổi lên và đổ bóng khi di chuột vào bài viết */
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Định dạng ảnh bài viết tránh bị méo hình */
+.blog-card .card-img-top {
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom nhẹ hình ảnh khi hover bài viết */
+.blog-card:hover .card-img-top {
+    transform: scale(1.02);
+}
+
+/* Custom tiêu đề bài viết */
+.blog-card .card-title {
+    color: #212529;
+    font-size: 1.45rem;
+    line-height: 1.4;
+}
+
+/* Nút Đọc thêm (Read More) custom border tròn trịa đồng bộ */
+.blog-card .btn-outline-success {
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-weight: 500;
+}
+
+/* 3. Custom Thanh Bên (Sidebar Widgets) */
+.sidebar-sticky {
+    top: 90px; /* Giữ sidebar không bị che bởi thanh Navbar sticky */
+}
+
+.sidebar-box {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Custom lại danh sách các danh mục (Categories) */
+.sidebar-box .list-group-item {
+    border: none;
+    padding: 12px 16px;
+    color: #495057;
+    font-weight: 500;
+    border-radius: 8px !important;
+    margin-bottom: 5px;
+    transition: all 0.25s ease;
+}
+
+/* Hiệu ứng hover danh mục: đổi nền xanh lá nhạt và đẩy nhẹ chữ qua phải */
+.sidebar-box .list-group-item:hover {
+    background-color: #e8f5e9 !important; /* Nền success siêu nhẹ */
+    color: #198754 !important; /* Chữ màu success */
+    padding-left: 24px;
+}
+
+/* 4. Đám mây thẻ (Tags Cloud) */
+.tags-cloud .badge {
+    padding: 8px 14px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    border-radius: 30px; /* Bo tròn hẳn dạng viên thuốc */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tags-cloud .badge:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* 5. Responsive tối ưu hiển thị trên Điện thoại */
+@media (max-width: 768px) {
+    .section-spacing {
+        padding: 35px 0;
+    }
+    
+    .blog-card .card-img-top {
+        height: 220px; /* Thu nhỏ chiều cao ảnh trên mobile cho đỡ chiếm diện tích */
+    }
+}
