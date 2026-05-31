@@ -4,7 +4,7 @@
 Đây là kho lưu trữ (repository) tổng hợp toàn bộ code bài tập, dự án thực hành và lý thuyết trong quá trình học môn **CSE391**.
 
 ## 👩‍💻 Thông tin sinh viên
-- **Họ và tên:** Trịnh Thị Thanh Thu
+- **Họ và tên:** Trịnh Thị Thanh Thư
 - **Mã sinh viên:** 2451160832
 
 ---
