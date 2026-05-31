@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSX Advanced - Project Cards</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .card { border: 1px solid #ccc; padding: 15px; margin: 10px; border-radius: 8px; width: 250px; display: inline-block; }
+        .featured { border-color: gold; background-color: #fffdf0; }
+        .badge-cat { background: #007bff; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function CategoryBadge({ category }) {
+            return <span className="badge-cat">{category}</span>;
+        }
+
+        function ProjectCard({ project }) {
+            return (
+                <div className={`card ${project.featured ? 'featured' : ''}`}>
+                    <h3>{project.title} {project.featured && "⭐"}</h3>
+                    <p>{project.description}</p>
+                    <CategoryBadge category={project.category} />
+                </div>
+            );
+        }
+
+        function ProjectList() {
+            const projects = [
+                { id: 1, title: "E-Commerce Web", description: "Bán hàng online", category: "Web", featured: true },
+                { id: 2, title: "Weather App", description: "Xem thời tiết", category: "Mobile", featured: false },
+                { id: 3, title: "Portfolio Static", description: "Trang cá nhân", category: "Web", featured: false }
+            ];
+
+            if (projects.length === 0) {
+                return <p>Hiện chưa có dự án nào hiển thị.</p>;
+            }
+
+            return (
+                <div>
+                    <h2>Danh sách Dự án</h2>
+                    <div>
+                        {projects.map(proj => <ProjectCard key={proj.id} project={proj} />)}
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ProjectList />);
+    </script>
+</body>
+</html>
