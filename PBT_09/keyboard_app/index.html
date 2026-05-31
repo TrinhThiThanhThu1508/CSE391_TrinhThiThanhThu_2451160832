@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard & Accessibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cinematic Gallery </h1>
+        <p>Mở Command Palette: <kbd>Ctrl</kbd> + <kbd>K</kbd></p>
+    </header>
+
+    <main>
+        <div class="gallery-grid" id="thumbnailGrid" aria-label="Danh sách hình ảnh"></div>
+    </main>
+
+    <div id="galleryModal" class="modal" role="dialog" aria-modal="true" aria-label="Trình xem ảnh toàn màn hình" aria-hidden="true">
+        <div class="modal-content">
+            <button id="closeGallery" class="icon-btn close-btn" aria-label="Đóng trình xem ảnh (Phím Escape)">❌</button>
+            <button id="prevBtn" class="icon-btn nav-btn left" aria-label="Ảnh trước đó (Mũi tên trái)">◀</button>
+            
+            <div class="image-container">
+                <img id="mainImage" src="" alt="Ảnh phóng to">
+                <div id="slideshowStatus" aria-live="polite" class="status-badge hidden">▶ Đang phát Slideshow</div>
+            </div>
+
+            <button id="nextBtn" class="icon-btn nav-btn right" aria-label="Ảnh tiếp theo (Mũi tên phải)">▶</button>
+        </div>
+        <div class="keyboard-hints" aria-hidden="true">
+            <kbd>←</kbd> <kbd>→</kbd> Chuyển ảnh | <kbd>1</kbd>-<kbd>9</kbd> Chọn ảnh | <kbd>Space</kbd> Slideshow | <kbd>Esc</kbd> Đóng
+        </div>
+    </div>
+
+    <div id="cmdPalette" class="modal" role="dialog" aria-modal="true" aria-label="Bảng lệnh Command Palette" aria-hidden="true">
+        <div class="cmd-content">
+            <input type="text" id="cmdInput" placeholder="Gõ lệnh tìm kiếm (VD: dark, play...)" aria-label="Ô nhập lệnh tìm kiếm">
+            <ul id="cmdList" role="listbox" aria-label="Danh sách các lệnh">
+                </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
