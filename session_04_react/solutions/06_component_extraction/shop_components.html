@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ShopVN - Extracted Components</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        nav { background: #333; color: #fff; padding: 15px; }
+        .hero { background: #e2e2e2; padding: 30px; text-align: center; }
+        .grid { display: flex; gap: 20px; padding: 20px; }
+        .prod-card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; background: #eee; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Navbar() {
+            return <nav><h1>ShopVN</h1></nav>;
+        }
+
+        function Hero() {
+            return <div className="hero"><h2>Siêu Sale Mùa Hè! Giảm đến 50%</h2></div>;
+        }
+
+        function ProductCard({ product }) {
+            return (
+                <div className="prod-card">
+                    <h4>{product.name}</h4>
+                    <p>Giá: {product.price}đ</p>
+                </div>
+            );
+        }
+
+        function ProductGrid({ products }) {
+            return (
+                <div className="grid">
+                    {products.map(p => <ProductCard key={p.id} product={p} />)}
+                </div>
+            );
+        }
+
+        function Footer() {
+            return <footer><p>© 2026 ShopVN. All rights reserved.</p></footer>;
+        }
+
+        function App() {
+            const listProducts = [
+                { id: 101, name: "Áo thun Basic", price: 150000 },
+                { id: 102, name: "Quần Short Jean", price: 250000 }
+            ];
+
+            return (
+                <div>
+                    <Navbar />
+                    <Hero />
+                    <ProductGrid products={listProducts} />
+                    <Footer />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html> 
