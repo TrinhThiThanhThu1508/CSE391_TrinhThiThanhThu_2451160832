@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Vanilla JS Todo List</title>
+</head>
+<body>
+    <div id="app">
+        <h2>Todo List (Vanilla JS)</h2>
+        <input type="text" id="todo-input" placeholder="Thêm việc cần làm...">
+        <button id="add-btn">Thêm</button>
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+        const todos = [];
+        const input = document.getElementById('todo-input');
+        const addBtn = document.getElementById('add-btn');
+        const todoList = document.getElementById('todo-list');
+
+        function render() {
+            todoList.innerHTML = '';
+            todos.forEach((todo, index) => {
+                const li = document.createElement('li');
+                li.style.textDecoration = todo.completed ? 'line-through' : 'none';
+                
+                // Text task
+                const span = document.createElement('span');
+                span.innerText = todo.text;
+                span.style.cursor = 'pointer';
+                span.onclick = () => {
+                    todo.completed = !todo.completed;
+                    render();
+                };
+
+                // Nút xóa
+                const deleteBtn = document.createElement('button');
+                deleteBtn.innerText = 'Xóa';
+                deleteBtn.style.marginLeft = '10px';
+                deleteBtn.onclick = () => {
+                    todos.splice(index, 1);
+                    render();
+                };
+
+                li.appendChild(span);
+                li.appendChild(deleteBtn);
+                todoList.appendChild(li);
+            });
+        }
+
+        addBtn.onclick = () => {
+            if (input.value.trim() !== '') {
+                todos.push({ text: input.value.trim(), completed: false });
+                input.value = '';
+                render();
+            }
+        };
+    </script>
+</body>
+</html>

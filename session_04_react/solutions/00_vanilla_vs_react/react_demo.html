@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>React CDN Todo List</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function TodoApp() {
+            const [todos, setTodos] = useState([]);
+            const [input, setInput] = useState('');
+
+            const addTodo = () => {
+                if (input.trim() === '') return;
+                setTodos([...todos, { text: input.trim(), completed: false }]);
+                setInput('');
+            };
+
+            const toggleTodo = (index) => {
+                const newTodos = [...todos];
+                newTodos[index].completed = !newTodos[index].completed;
+                setTodos(newTodos);
+            };
+
+            const deleteTodo = (index) => {
+                setTodos(todos.filter((_, i) => i !== index));
+            };
+
+            return (
+                <div>
+                    <h2>Todo List (React CDN)</h2>
+                    <input 
+                        type="text" 
+                        value={input} 
+                        onChange={(e) => setInput(e.target.value)} 
+                        placeholder="Thêm việc cần làm..."
+                    />
+                    <button onClick={addTodo}>Thêm</button>
+                    <ul>
+                        {todos.map((todo, index) => (
+                            <li key={index} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                                <span onClick={() => toggleTodo(index)} style={{ cursor: 'pointer' }}>
+                                    {todo.text}
+                                </span>
+                                <button onClick={() => deleteTodo(index)} style={{ marginLeft: '10px' }}>Xóa</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<TodoApp />);
+    </script>
+</body>
+</html>
